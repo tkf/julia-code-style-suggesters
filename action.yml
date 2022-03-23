@@ -29,6 +29,7 @@ runs:
         run: |
           git checkout -- .
           git clean --force
+        shell: bash
 
       - name: Format Julia project files
         if: success() || failure()
