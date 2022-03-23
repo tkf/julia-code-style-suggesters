@@ -24,6 +24,12 @@ runs:
           tool_name: JuliaFormatter
           fail_on_error: true
 
+      # reviewdog/action-suggester not using `cleanup` flag?
+      - name: Cleanup
+        run: |
+          git checkout -- .
+          git clean --force
+
       - name: Format Julia project files
         if: success() || failure()
         run: |
