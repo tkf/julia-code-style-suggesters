@@ -26,6 +26,7 @@ runs:
 
       # reviewdog/action-suggester not using `cleanup` flag?
       - name: Cleanup
+        if: success() || failure()
         run: |
           git checkout -- .
           git clean --force
