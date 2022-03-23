@@ -25,11 +25,13 @@ runs:
           fail_on_error: true
 
       - name: Format Julia project files
+        if: success() || failure()
         run: |
           using JuliaProjectFormatter
           format_projects()
         shell: julia --color=yes --compile=min -O0 {0}
       - name: suggester / JuliaProjectFormatter
+        if: success() || failure()
         uses: reviewdog/action-suggester@v1
         with:
           tool_name: JuliaProjectFormatter
