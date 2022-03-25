@@ -12,8 +12,9 @@ Actions.)
 
 ## Usage example
 
+Create `.github/workflows/code-style.yml` with the following content:
+
 ```yaml
-# .github/workflows/code-style.yml
 name: Code style
 
 on:
