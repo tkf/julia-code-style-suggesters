@@ -1,4 +1,10 @@
 name: Post code style suggestion as GitHub comments
+inputs:
+  format_paths:
+    descriptions: 'Paths formatted by JuliaFormatter'
+    required: true
+    default: '"."'
+  
 runs:
   using: "composite"
   steps:
@@ -16,7 +22,7 @@ runs:
       - name: Format Julia files
         run: |
           using JuliaFormatter
-          format(".")
+          format(${{ inputs.format_paths }})
         shell: julia --color=yes --compile=min -O0 {0}
       - name: suggester / JuliaFormatter
         uses: reviewdog/action-suggester@v1
