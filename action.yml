@@ -9,7 +9,7 @@ runs:
           using Pkg
           Pkg.add([
               PackageSpec("JuliaFormatter"),
-              PackageSpec(url = "https://github.com/tkf/JuliaProjectFormatter.jl.git"),
+              PackageSpec("JuliaProjectFormatter"),
           ])
         shell: julia --color=yes {0}
 
